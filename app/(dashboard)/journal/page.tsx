@@ -1,5 +1,6 @@
 import EntryCard from '@/components/EntryCard'
 import NewEntryCard from '@/components/NewEntryCard'
+import { analyze } from '@/utils/ai'
 import { getUserByClerkId } from '@/utils/auth'
 import { prisma } from '@/utils/db'
 import Link from 'next/link'
@@ -14,6 +15,11 @@ const getEntries = async () => {
       createdAt: 'desc',
     },
   })
+
+  await analyze(`im goning to give you a journal entry i want you to analyze for a few things, I need the 
+  mood, a summary, what the subject is, and a collor representing the mood. You need to respond bac with formatted JSON like so
+  {mood :"" , subject:"" , color:"", negatuve: ""}.
+  entry: today is a grat day i feel myself wonderful and wanna run until i get fall asleep`)
   return entries
 }
 
@@ -28,7 +34,6 @@ const JournalPage = async () => {
 
         {entries.map((entry) => (
           <Link href={`/journal/${entry.id}`} key={entry.id}>
-            {' '}
             <EntryCard entry={entry} />
           </Link>
         ))}
