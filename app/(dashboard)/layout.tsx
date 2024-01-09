@@ -14,7 +14,7 @@ const DashboardLayout = ({ children }) => {
           </div>
         </header>
 
-        <div className="h-[calc(100vh-60px)]">{children}</div>
+        <div className="h-[calc(100vh-80px)]">{children}</div>
       </div>
     </div>
   )
