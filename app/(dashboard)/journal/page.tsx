@@ -16,9 +16,6 @@ const getEntries = async () => {
     },
   })
 
-  await analyze(
-    `today was e ok day. shy was red. i explore some new places in the city but my tires was flatted :D. when i get the gas station red haired woman impressed me and get her a red roses `
-  )
   return entries
 }
 
