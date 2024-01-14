@@ -4,11 +4,13 @@ import z from 'zod'
 import { PromptTemplate } from 'langchain/prompts'
 import { Document } from 'langchain/document'
 import { loadQARefineChain } from 'langchain/chains'
-import { OpenAIEmbeddings } from '@langchain/openai'
+import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
+// import { OpenAIEmbeddings } from '@langchain/openai'
 import { MemoryVectorStore } from 'langchain/vectorstores/memory'
 
 const parser = StructuredOutputParser.fromZodSchema(
   z.object({
+    // sentimentScore : z.number().describe('sentiment of the text and rated on a scale from -10 to 10, where -10 is extremely negative, 0 is neutral, and 10 is extremely positive.')
     mood: z
       .string()
       .describe('The moood of the person who wrote the journal entry.'),
@@ -71,7 +73,7 @@ export const qa = async (question, entries) => {
   const store = await MemoryVectorStore.fromDocuments(docs, embeddings)
   const relevantDocs = await store.similaritySearch(question)
   const res = await chain.call({
-    inout_documents: relevantDocs,
+    input_documents: relevantDocs,
     question,
   })
   return res.output_text
