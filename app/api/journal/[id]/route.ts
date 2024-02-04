@@ -32,7 +32,7 @@ export const PATCH = async (request: Request, { params }) => {
     },
     update: analysis,
   })
-  console.log(updated)
+  // console.log(updated)
 
   return NextResponse.json({ data: { ...updatedEntry, analysis: updated } })
 }

@@ -45,7 +45,7 @@ const getPrompt = async (content) => {
   const input = await prompt.format({
     entry: content,
   })
-  console.log(input)
+  // console.log(input)
   return input
 }
 
