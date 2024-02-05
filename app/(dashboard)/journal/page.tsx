@@ -12,20 +12,19 @@ import Entries from '@/components/Entries'
 
 export default function JournalPage() {
   return (
-    <div className="container mx-auto flex flex-col my-2 ">
+    <div className="container mr-auto flex flex-col my-2 min-h-screen">
       <div className="flex w-full">
         <Header />
       </div>
 
-      <div className="flex flex-row min-w-screen ">
-        <div className="basis-1/5">
+      <div className="flex flex-row   space-x-4 ">
+        <div className=" basis-1/ lg:basis-1/6">
           <Aside></Aside>
         </div>
-        <div className=" h-[calc(100vh-90px)] basis-1/2">
+        <div className="  1/3  lg:basis-4/6">
           <Entries />
         </div>
-        <div className="basis-1/5">
-          {' '}
+        <div className="1/3 lg:basis-1/6">
           <Questionnere></Questionnere>
         </div>
       </div>

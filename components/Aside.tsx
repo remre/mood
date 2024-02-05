@@ -21,12 +21,12 @@ const links = [
 const customTheme: CustomFlowbiteTheme = {
   sidebar: {
     root: {
-      inner: 'bg bg-bgbg w-[200px] h-full border-2 border-black',
+      inner: 'bg bgbg  min-h-screen border-2 border-black',
     },
     item: {
-      base: 'text-gray-900 text-3xl font-semibold w-full h-16 flex items-center  my-5',
+      base: 'text-gray-900 text-2xl font-semibold  h-16 flex items-center  my-2',
       icon: {
-        base: 'h-[45px] w-[45px] ',
+        base: 'h-[25px] w-[25px] ',
       },
     },
   },
