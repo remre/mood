@@ -5,42 +5,30 @@ import { getUserByClerkId } from '@/utils/auth'
 import { prisma } from '@/utils/db'
 import Link from 'next/link'
 import { Question } from '@/components/Question'
+import Header from '@/components/Header'
+import Aside from '@/components/Aside'
+import Questionnere from '@/components/Questionnere'
+import Entries from '@/components/Entries'
 
-const getEntries = async () => {
-  const user = await getUserByClerkId()
-  const entries = await prisma.journalEntry.findMany({
-    where: {
-      userId: user.id,
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  })
-
-  return entries
-}
-
-const JournalPage = async () => {
-  const entries = await getEntries()
-  // console.log('entries', entries)
+export default function JournalPage() {
   return (
-    <div className="p-10 bg-zinc-400/10 h-full">
-      <h2 className="text-3xl mb-8">Journal</h2>
-      <div className="my-8">
-        <Question />
+    <div className="container mx-auto flex flex-col my-2 ">
+      <div className="flex w-full">
+        <Header />
       </div>
 
-      <div className="grid grid-cols-3 gap-4 ">
-        <NewEntryCard />
-
-        {entries.map((entry) => (
-          <Link href={`/journal/${entry.id}`} key={entry.id}>
-            <EntryCard entry={entry} />
-          </Link>
-        ))}
+      <div className="flex flex-row min-w-screen ">
+        <div className="basis-1/5">
+          <Aside></Aside>
+        </div>
+        <div className=" h-[calc(100vh-90px)] basis-1/2">
+          <Entries />
+        </div>
+        <div className="basis-1/5">
+          {' '}
+          <Questionnere></Questionnere>
+        </div>
       </div>
     </div>
   )
 }
-
-export default JournalPage
