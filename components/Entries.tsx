@@ -1,4 +1,3 @@
-'use client'
 import EntryCard from '@/components/EntryCard'
 import NewEntryCard from '@/components/NewEntryCard'
 import { analyze } from '@/utils/ai'
@@ -7,7 +6,7 @@ import { prisma } from '@/utils/db'
 import Link from 'next/link'
 
 import { Pagination } from 'flowbite-react'
-import { useState } from 'react'
+// import { useState } from 'react'
 const getEntries = async () => {
   const user = await getUserByClerkId()
   const entries = await prisma.journalEntry.findMany({
@@ -23,9 +22,9 @@ const getEntries = async () => {
 }
 
 const Entries = async () => {
-  const [currentPage, setCurrentPage] = useState(1)
+  // const [currentPage, setCurrentPage] = useState(1)
 
-  const onPageChange = (page: number) => setCurrentPage(page)
+  // const onPageChange = (page: number) => setCurrentPage(page)
   const entries = await getEntries()
   // console.log('entries', entries)
   return (
@@ -41,12 +40,12 @@ const Entries = async () => {
         <NewEntryCard />
       </div>
       <div className="flex overflow-x-auto sm:justify-center">
-        <Pagination
+        {/* <Pagination
           layout="table"
           currentPage={currentPage}
           totalPages={100}
           onPageChange={onPageChange}
-        />
+        /> */}
       </div>
     </div>
   )

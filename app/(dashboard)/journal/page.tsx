@@ -18,13 +18,13 @@ export default function JournalPage() {
       </div>
 
       <div className="flex flex-row   space-x-4 ">
-        <div className=" basis-1/ lg:basis-1/6">
+        <div className=" basis-1/3 lg:basis-1/6">
           <Aside></Aside>
         </div>
-        <div className="  1/3  lg:basis-4/6">
+        <div className="basis-1/3  lg:basis-4/6">
           <Entries />
         </div>
-        <div className="1/3 lg:basis-1/6">
+        <div className=" basis-1/3 lg:basis-1/6">
           <Questionnere></Questionnere>
         </div>
       </div>
