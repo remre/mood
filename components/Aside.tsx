@@ -64,10 +64,10 @@ export default function Aside() {
                 >
                   History
                 </Sidebar.Item>
-                <Sidebar.Item href="/" icon={HiInbox} label="3">
+                <Sidebar.Item href="/" icon={HiInbox}>
                   Home
                 </Sidebar.Item>
-                <Sidebar.Item href="#" icon={HiUser}>
+                {/* <Sidebar.Item href="#" icon={HiUser}>
                   Users
                 </Sidebar.Item>
                 <Sidebar.Item href="#" icon={HiShoppingBag}>
@@ -78,7 +78,7 @@ export default function Aside() {
                 </Sidebar.Item>
                 <Sidebar.Item href="#" icon={HiTable}>
                   Sign Up
-                </Sidebar.Item>
+                </Sidebar.Item> */}
               </Sidebar.ItemGroup>
             </Sidebar.Items>
           </Sidebar>

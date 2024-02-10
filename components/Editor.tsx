@@ -31,17 +31,21 @@ const Editor = ({ entry }) => {
   return (
     <div className="w-full h-full grid grid-cols-3">
       <div className="col-span-2">
-        {loading && <div>.... loading</div>}
+        {/* <span className="loading  loading-dots loading-lg m-auto block py-5 duration-100" /> */}
+        {loading && <div className="loading  loading-dots ">....loading</div>}
         <textarea
-          className="w-full h-full p-8 text-xl outline-none"
+          className="w-full h-full p-8 text-xl outline-none box"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
       </div>
 
       <div className="border-l  border-black/10">
-        <div className=" px-6 py-10" style={{ backgroundColor: color }}>
-          <h2 className="text-2xl">Analysis</h2>
+        <div
+          className=" px-6 py-10 box box-border "
+          style={{ backgroundColor: color }}
+        >
+          <h2 className="text-2xl font-bold text-white">Analysis</h2>
         </div>
         <div>
           <ul>

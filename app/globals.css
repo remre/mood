@@ -6,4 +6,7 @@
   .bgbg {
     @apply bg-red-500;
   }
+  .box {
+    @apply rounded-lg;
+  }
 }
