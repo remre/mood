@@ -4,7 +4,7 @@
 
 @layer base {
   .bgbg {
-    @apply bg-red-500;
+    @apply bg-yellow-300;
   }
   .box {
     @apply rounded-lg;

@@ -64,7 +64,7 @@ export default function Aside() {
                 >
                   History
                 </Sidebar.Item>
-                <Sidebar.Item href="/" icon={HiInbox}>
+                <Sidebar.Item href="/" icon={HiInbox} label="3">
                   Home
                 </Sidebar.Item>
                 {/* <Sidebar.Item href="#" icon={HiUser}>

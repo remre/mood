@@ -1,9 +1,9 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter, Poor_Story } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeModeScript } from 'flowbite-react'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Poor_Story({ subsets: ['latin'], weight: '400' })
 
 export const metadata = {
   title: 'Create Next App',

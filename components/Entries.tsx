@@ -31,14 +31,15 @@ const Entries = async () => {
     <div className="flex flex-col p-5 bg-zinc-400/10 ">
       <h2 className="flex text-3xl mb-8 ">Journal</h2>
 
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2  ">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 ">
         {entries.map((entry) => (
           <Link href={`/journal/${entry.id}`} key={entry.id}>
             <EntryCard entry={entry} />
           </Link>
         ))}
-
-        <NewEntryCard />
+        <div className="cursor-pointer">
+          <NewEntryCard />
+        </div>
       </div>
       <div className="flex overflow-x-auto sm:justify-center">
         {/* <Pagination
