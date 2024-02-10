@@ -9,7 +9,7 @@ export default function Header() {
         {/* Logo */}
         <div>
           <Link href="/home">
-            <Image src={'/'} height={50} width={50} alt="App logo"></Image>
+            {/* <Image src={'/'} height={50} width={50} alt="App logo"></Image> */}
           </Link>
           <div className="divide-y-4 divide-yellow-700" />
         </div>
